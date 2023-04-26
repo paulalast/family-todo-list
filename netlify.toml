@@ -1,0 +1,3 @@
+[build]
+  command = "gulp buildForProd"
+  publish = "/dist"

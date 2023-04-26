@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family TODO List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter&family=Nunito:wght@200;300;500;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./dist/css/style.min.css">
+</head>
+
+<body>
+    <header class="header">family to-do list</header>
+    <main>
+        <section class="tasks__board">
+            <div class="daybox 1" id="day1">
+                <h2 class="daybox__title">MONDAY <img class="calendar"
+                        src="./dist/img/icons/calendar.png" alt="calendar icon">
+                </h2>
+
+                <ul class="todo__list">
+
+                </ul>
+
+
+            </div>
+            <div class="daybox 2" id="day2">
+                <h2 class="daybox__title">TUESDAY <img class="calendar"
+                        src="./dist/img/icons/calendar.png" alt="calendar icon">
+                </h2>
+                <ul class="todo__list">
+
+                    </li>
+                </ul>
+
+
+            </div>
+            <div class="daybox 3" value="3" id="day3">
+                <h2 class="daybox__title">WEDNESDAY <img class="calendar"
+                        src="./dist/img/icons/calendar.png" alt="calendar icon">
+                </h2>
+                <ul class="todo__list">
+
+                </ul>
+
+            </div>
+            <div class="daybox 4" id="day4">
+                <h2 class="daybox__title">THURSDAY <img class="calendar"
+                        src="./dist/img/icons/calendar.png" alt="calendar icon">
+                </h2>
+                <ul class="todo__list">
+
+                </ul>
+
+
+            </div>
+            <div class="daybox 5" id="day5">
+                <h2 class="daybox__title">FRIDAY <img class="calendar"
+                        src="./dist/img/icons/calendar.png" alt="calendar icon">
+                </h2>
+                <ul class="todo__list">
+
+                </ul>
+
+            </div>
+
+
+            <button class="addTask"> <img class="addTaskBtn"
+                    src="./dist/img/icons/add.png" alt="add button"></button>
+        </section>
+        <section class="members__board">
+            <nav class="members__nav">
+                <h2 class="members__nav__title">MEMBERS</h2>
+            </nav>
+            <div class="members__box">
+                <ul class="members__list">
+
+                </ul>
+            </div>
+
+
+            <button class="addMember"> <img class="addButton"
+                    src="./dist/img/icons/add.png" alt="add button"></button>
+
+        </section>
+
+
+
+        <section class="newtask__board">
+            <h2 class="newtask__title">NEW TASK</h2>
+            <select class="member" name="name" id="">
+                <option value="" disabled selected hidden>Name</option>
+            </select>
+
+            <select class="day" name="day">
+                <option value="" disabled selected hidden>Select day:</option>
+                <option id="1" value="1">Monday</option>
+                <option value="2">Thuesday</option>
+                <option value="3">Wednesday</option>
+                <option value="4">Thursday</option>
+                <option value="5">Friday</option>
+            </select>
+
+            <input type="text" class="task" placeholder="Write your task..."></input>
+            <div class="buttons">
+                <button class="btn cancel">CANCEL</button>
+                <button class="btn save">SAVE</button>
+            </div>
+        </section>
+
+        <section class="newmember__board">
+            <h2 class="newmember__title">
+                New member</h2>
+            <input class="newmember__name" id="name" placeholder="Name"
+                type="text">
+            <select class="select__color" name="color" id="select">
+                <option value="0" disabled selected hidden>Please pick your
+                    color:
+                </option>
+                <option id="grey" value="858f99">⬜️ Grey </option>
+                <option id="green" value="ccd5ae">🟩 Green
+                </option>
+                <option id="beige" value="f5ebe0">🟨 Beige </option>
+                <option id="pink" value="d09fa3">🟪 Pink </option>
+                <option id="brown" value="8D5D44">🟫 Brown </option>
+            </select>
+            <img class="colorstopick" src="./dist/img/colors.png"
+                alt="colors to pick">
+
+            <div class="buttons">
+                <button class="btn cancelMember">CANCEL</button>
+                <button class="btn saveMember">SAVE</button>
+            </div>
+        </section>
+
+
+
+        </div>
+    </main>
+    <script src="./dist/js/script.min.js"></script>
+</body>
+
+</html>

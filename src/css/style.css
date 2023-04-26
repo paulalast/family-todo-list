@@ -1,0 +1,522 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+  overflow-x: hidden;
+  background-color: rgba(0, 0, 0, 0.805);
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 6em;
+  font-size: 2em;
+  font-weight: 800;
+  letter-spacing: 0.3em;
+  word-spacing: 0.4em;
+  text-transform: uppercase;
+  background-color: #e0d3cf;
+  -webkit-box-shadow: 0.1em 0.1em 0.1em #ededed;
+          box-shadow: 0.1em 0.1em 0.1em #ededed;
+  text-shadow: 0.01em 0.01em 0.02em #161625;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.tasks__board {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  margin: 2em;
+  padding: 0.1em;
+  min-height: 30em;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.tasks__board .daybox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 1em;
+  border-radius: 3px;
+  max-width: 35em;
+  background-color: #171717ad;
+}
+
+.tasks__board .daybox__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 1.5em;
+  padding: 1em;
+  margin-bottom: 1em;
+  min-width: 20em;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  border-radius: 3px;
+  background-color: #ededed;
+}
+
+.tasks__board .daybox__title .calendar {
+  width: 1em;
+}
+
+.tasks__board .daybox .todo__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+}
+
+.tasks__board .daybox .todo__list__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.1em;
+  margin: 0.5em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 100%;
+  min-height: 3em;
+  padding: 1em;
+  background-color: #ccd5ae;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.tasks__board .daybox .todo__list__item .checkmark {
+  margin: 0 1em;
+  width: 1.2em;
+  height: 1.2em;
+}
+
+.tasks__board .addTask {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 5em;
+  bottom: 0;
+  left: 10em;
+  width: 5em;
+  height: 5em;
+  border: none;
+  border-radius: 50%;
+  -webkit-box-shadow: 0.1em 0.1em 0.1em #ededed;
+          box-shadow: 0.1em 0.1em 0.1em #ededed;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.tasks__board .addTask .addTaskBtn {
+  width: 80%;
+  height: 80%;
+}
+
+.tasks__board .addTask:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.members__board {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: -25em;
+  height: 100vh;
+  width: 25em;
+  background-color: #f4f2f2;
+  -webkit-transition: right 0.3s;
+  transition: right 0.3s;
+}
+
+.members__board .members__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  background-color: #e0d3cf;
+  width: 4em;
+  margin: 0 -4em;
+  height: 100%;
+  border-left: 1px solid #ededed;
+  -webkit-box-shadow: 0.1em 0.1em 0.1em #ededed;
+          box-shadow: 0.1em 0.1em 0.1em #ededed;
+  cursor: pointer;
+}
+
+.members__board .members__nav__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  letter-spacing: 1em;
+  top: 10em;
+  width: 100%;
+  height: 1.2em;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+}
+
+.members__board .members__box {
+  width: 100%;
+}
+
+.members__board .members__box .members__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.members__board .members__box .members__list .member {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.4em;
+  margin: 1em 0;
+}
+
+.members__board .members__box .members__list .member__color {
+  margin: 0 1em 0 1em;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.125);
+          box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.125);
+  background-color: #fff;
+}
+
+.members__board .addMember {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  bottom: 0;
+  right: 0;
+  margin: 2em;
+  width: 5em;
+  height: 5em;
+  -webkit-transition: -webkit-box-shadow 4s ease-in-out;
+  transition: -webkit-box-shadow 4s ease-in-out;
+  transition: box-shadow 4s ease-in-out;
+  transition: box-shadow 4s ease-in-out, -webkit-box-shadow 4s ease-in-out;
+  background-color: #e0d3cf;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+          box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}
+
+.members__board .addMember .addButton {
+  position: relative;
+  width: 2.5em;
+}
+
+.members__board .addMember:hover {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+          box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+}
+
+.members__board:hover {
+  right: 0;
+}
+
+.members__board:hover .members__nav__title {
+  color: #ffffff;
+}
+
+.newtask__board {
+  display: none;
+  position: absolute;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #ededed;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 50em;
+  height: 40em;
+  padding: 2em 3em;
+  border-radius: 1em;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+          box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}
+
+.newtask__board .newtask__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1em;
+  letter-spacing: 0.1em;
+}
+
+.newtask__board .day,
+.newtask__board .member,
+.newtask__board .task {
+  margin-bottom: 1em;
+  padding: 0.6em;
+  letter-spacing: 0.05em;
+  border: none;
+  border-radius: 0.2em;
+  cursor: pointer;
+}
+
+.newtask__board .day:focus,
+.newtask__board .member:focus,
+.newtask__board .task:focus {
+  outline: #e0d3cf;
+}
+
+.newtask__board .task {
+  cursor: text;
+}
+
+.newtask__board .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 4em;
+  bottom: 0;
+  width: 100%;
+}
+
+.newtask__board .buttons .btn {
+  height: 3em;
+  width: 50%;
+  letter-spacing: 0.1em;
+  background-color: #e0d3cf;
+  -webkit-box-shadow: 0em 0.2em 0.1em #f4f2f2;
+          box-shadow: 0em 0.2em 0.1em #f4f2f2;
+  border: none;
+  border-radius: 1em;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.newtask__board .buttons .cancel {
+  margin-right: 1em;
+}
+
+.newtask__board .buttons .btn:hover {
+  background-color: #d09fa3;
+}
+
+.newmember__board {
+  display: none;
+  position: absolute;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #ededed;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 50em;
+  height: 40em;
+  padding: 2em 3em;
+  border-radius: 1em;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+          box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}
+
+.newmember__board .newmember__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.newmember__board .newmember__name {
+  margin-bottom: 1em;
+  padding: 0.6em;
+  letter-spacing: 0.05em;
+  border: none;
+  border-radius: 0.2em;
+  cursor: pointer;
+}
+
+.newmember__board .select__color {
+  margin-bottom: 1em;
+  padding: 0.6em;
+  letter-spacing: 0.05em;
+  border: none;
+  border-radius: 0.2em;
+  cursor: pointer;
+}
+
+.newmember__board .colorstopick {
+  margin-top: 2em;
+  width: 70%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.newmember__board .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 4em;
+  bottom: 0;
+  width: 100%;
+}
+
+.newmember__board .buttons .btn {
+  height: 3em;
+  width: 50%;
+  letter-spacing: 0.1em;
+  color: #161625;
+  background-color: #e0d3cf;
+  -webkit-box-shadow: 0em 0.2em 0.1em #f4f2f2;
+          box-shadow: 0em 0.2em 0.1em #f4f2f2;
+  border: none;
+  border-radius: 1em;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.newmember__board .buttons .cancelMember {
+  margin-right: 1em;
+}
+
+.newmember__board .buttons .btn:hover {
+  background-color: #d09fa3;
+}
+
+.close {
+  display: none;
+}
+
+.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.done {
+  font-style: italic;
+  text-decoration: line-through;
+  opacity: 0.4;
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */

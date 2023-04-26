@@ -1,0 +1,383 @@
+@import "colors";
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "Nunito", sans-serif;
+}
+html {
+	scroll-behavior: smooth;
+	font-size: 62.5%;
+	overflow: hidden;
+	background-color: rgba(0, 0, 0, 0.805);
+}
+.header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 6em;
+	font-size: 2em;
+	font-weight: 800;
+	letter-spacing: 0.3em;
+	word-spacing: 0.4em;
+	text-transform: uppercase;
+	background-color: $headerBG;
+	box-shadow: 0.1em 0.1em 0.1em $grey;
+	text-shadow: 0.01em 0.01em 0.02em $dark;
+}
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+}
+.tasks__board {
+	display: flex;
+	justify-items: center;
+	margin: 2em;
+	padding: 0.1em;
+	min-height: 30em;
+	flex-wrap: wrap;
+
+	.daybox {
+		display: flex;
+		flex-direction: column;
+		margin: 1em;
+		border-radius: 3px;
+		max-width: 35em;
+		// border: 0.1em solid $grey;
+		// box-shadow: 0.1em 0.1em 0.3em $beige;
+		background-color: $darker;
+
+		&__title {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			font-size: 1.5em;
+			padding: 1em;
+			margin-bottom: 1em;
+			min-width: 20em;
+			font-weight: 500;
+			letter-spacing: 0.1em;
+			// box-shadow: 0.1em 0.1em 0.2em $beige;
+			border-radius: 3px;
+
+			background-color: $grey;
+			.calendar {
+				width: 1em;
+			}
+		}
+
+		.todo__list {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			// width: 100%;
+			list-style: none;
+			&__item {
+				display: flex;
+				font-size: 1.1em;
+				margin: 0.5em;
+				align-items: center;
+				max-width: 100%;
+				min-height: 3em;
+				padding: 1em;
+				background-color: $member1BG;
+				border-radius: 3px;
+				cursor: pointer;
+				.checkmark {
+					margin: 0 1em;
+					width: 1.2em;
+					height: 1.2em;
+				}
+			}
+		}
+	}
+
+	.addTask {
+		display: flex;
+		position: absolute;
+		justify-content: center;
+		align-items: center;
+		margin: 5em;
+		bottom: 0;
+		left: 10em;
+		width: 5em;
+		height: 5em;
+		border: none;
+		border-radius: 50%;
+		box-shadow: 0.1em 0.1em 0.1em $grey;
+		transition: transform 0.3s ease-in-out;
+
+		cursor: pointer;
+		.addTaskBtn {
+			width: 80%;
+			height: 80%;
+		}
+	}
+	.addTask:hover {
+		transform: scale(1.1);
+	}
+}
+.members__board {
+	display: flex;
+	// display: none;
+	position: absolute;
+	top: 0;
+	right: -25em;
+	height: 100vh;
+	width: 25em;
+	background-color: $beige;
+	transition: right 0.3s;
+
+	.members__nav {
+		display: flex;
+		position: absolute;
+		background-color: $headerBG;
+		width: 4em;
+		margin: 0 -4em;
+		height: 100%;
+		border-left: 1px solid $grey;
+		box-shadow: 0.1em 0.1em 0.1em $grey;
+		cursor: pointer;
+
+		&__title {
+			display: flex;
+			position: relative;
+			transform: rotate(90deg);
+			letter-spacing: 1em;
+			top: 10em;
+			width: 100%;
+			height: 1.2em;
+			transition: color 0.1s ease-in-out;
+		}
+	}
+	.members__box {
+		width: 100%;
+		.members__list {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-evenly;
+			.member {
+				display: flex;
+				justify-content: start;
+				flex-direction: row;
+				align-items: center;
+				font-size: 1.4em;
+				margin: 1em 0;
+			}
+			.member__color {
+				margin: 0 1em 0 1em;
+				width: 2.5em;
+				height: 2.5em;
+				border-radius: 50%;
+				box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.125);
+				background-color: #fff;
+			}
+		}
+	}
+
+	// .member {
+	// 	display: flex;
+	// 	flex-direction: row;
+	// 	margin-top: 2em;
+	// 	height: 4em;
+	// 	width: 100%;
+
+	// 	&__color {
+	// 		margin: 0 1em 0 1em;
+	// 		width: 4em;
+	// 		height: 4em;
+	// 		border-radius: 50%;
+	// 		// background-color: $member1BG;
+	// 	}
+	// 	&__title {
+	// 		align-self: center;
+	// 		margin-left: 1em;
+	// 	}
+	// }
+	.addMember {
+		display: flex;
+		position: absolute;
+		align-items: center;
+		justify-content: center;
+		bottom: 0;
+		right: 0;
+		margin: 2em;
+		width: 5em;
+		height: 5em;
+		transition: box-shadow 4s ease-in-out;
+		background-color: #e0d3cf;
+		border-radius: 50%;
+		border: none;
+		cursor: pointer;
+		box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+		.addButton {
+			position: relative;
+			width: 2.5em;
+			// background: #000;
+		}
+	}
+	.addMember:hover {
+		box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+	}
+}
+.members__board:hover {
+	right: 0;
+	.members__nav__title {
+		color: $white;
+	}
+}
+.newtask__board {
+	display: none;
+	position: absolute;
+	flex-direction: column;
+	background-color: $grey;
+	align-self: center;
+	width: 50em;
+	height: 40em;
+	padding: 2em 3em;
+	border-radius: 1em;
+	box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+	.newtask__title {
+		display: flex;
+
+		justify-content: center;
+		align-items: center;
+		margin: 1em;
+		letter-spacing: 0.1em;
+	}
+
+	.day,
+	.member,
+	.task {
+		margin-bottom: 1em;
+		padding: 0.6em;
+		letter-spacing: 0.05em;
+		border: none;
+		border-radius: 0.2em;
+		cursor: pointer;
+	}
+	.day:focus,
+	.member:focus,
+	.task:focus {
+		outline: #e0d3cf;
+	}
+	.task {
+		cursor: text;
+		border-radius: 0.2em;
+		height: 4em;
+	}
+	.buttons {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 4em;
+		bottom: 0;
+		width: 100%;
+		.btn {
+			height: 3em;
+			width: 50%;
+			letter-spacing: 0.1em;
+			background-color: $headerBG;
+			box-shadow: 0em 0.1em 0.1em $beige;
+			border: none;
+			border-radius: 1em;
+			cursor: pointer;
+			transition: background-color 0.3s;
+		}
+		.cancel {
+			margin-right: 1em;
+		}
+		.btn:hover {
+			background-color: $member4BG;
+		}
+	}
+}
+.newmember__board {
+	display: none;
+	position: absolute;
+	flex-direction: column;
+	background-color: $grey;
+	align-self: center;
+	width: 50em;
+	height: 40em;
+	padding: 2em 3em;
+	border-radius: 1em;
+	box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+	.newmember__title {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 1em;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+	}
+	.newmember__name {
+		margin-bottom: 1em;
+		padding: 0.6em;
+		letter-spacing: 0.05em;
+		border: none;
+		border-radius: 0.2em;
+
+		cursor: pointer;
+	}
+	.select__color {
+		margin-bottom: 1em;
+		padding: 0.6em;
+		letter-spacing: 0.05em;
+		border: none;
+		border-radius: 0.2em;
+		cursor: pointer;
+	}
+	.colorstopick {
+		margin-top: 2em;
+		width: 70%;
+		justify-content: center;
+		align-self: center;
+	}
+	.buttons {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 4em;
+		bottom: 0;
+		width: 100%;
+
+		.btn {
+			height: 3em;
+			width: 50%;
+			letter-spacing: 0.1em;
+			color: $dark;
+			background-color: $headerBG;
+			box-shadow: 0em 0.2em 0.1em $beige;
+			border: none;
+			border-radius: 1em;
+			cursor: pointer;
+			transition: background-color 0.3s;
+		}
+		.cancelMember {
+			margin-right: 1em;
+		}
+		.btn:hover {
+			background-color: $member4BG;
+		}
+	}
+}
+
+.close {
+	display: none;
+	position: absolute;
+}
+.show {
+	display: flex;
+	position: absolute;
+}
+.done {
+	font-style: italic;
+	text-decoration: line-through;
+	opacity: 0.4;
+	cursor: pointer;
+}
