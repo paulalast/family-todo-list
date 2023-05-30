@@ -1,2 +1,2 @@
 ## LINK TO THE SITE
- https://family-to-do-list.netlify.app/
+https://paulalast.github.io/family-todo-list/
