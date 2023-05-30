@@ -23,7 +23,7 @@ html {
 	letter-spacing: 0.3em;
 	word-spacing: 0.4em;
 	text-transform: uppercase;
-	background-color: $headerBG;
+	background-color: $grey;
 	box-shadow: 0.1em 0.1em 0.1em $grey;
 	text-shadow: 0.01em 0.01em 0.02em $dark;
 }
@@ -135,7 +135,7 @@ main {
 	.members__nav {
 		display: flex;
 		position: absolute;
-		background-color: $headerBG;
+		background-color: $grey;
 		width: 4em;
 		margin: 0 -4em;
 		height: 100%;
@@ -213,7 +213,7 @@ main {
 		border-radius: 50%;
 		border: none;
 		cursor: pointer;
-		box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+		box-shadow: rgba(0, 0, 0, 0.364) 2.4px 2.4px 3.2px;
 		.addButton {
 			position: relative;
 			width: 2.5em;
